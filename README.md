@@ -96,7 +96,7 @@ Download and prepare WebFace4M and WebFace12M: place the `.rec` files in `data/w
 
 ### Step 5: Training
 
-#### EdgeFace-S(𝛾=0.5)
+#### FaceLiVT-S
 
 Launch the following command after setting the root path and output path in the config files:
 
