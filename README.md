@@ -101,28 +101,15 @@ Download and prepare WebFace4M and WebFace12M: place the `.rec` files in `data/w
 Launch the following command after setting the root path and output path in the config files:
 
 ```bash
-torchrun --nproc_per_node=8 train_v2.py configs/distil_glint360k_facelivt_m_li.py
-```
-After finishing this step, launch:
-
-```bash
-torchrun --nproc_per_node=8 train_v2_restart.py configs/distil_glint360k_facelivt_m_li.py
+torchrun --nproc_per_node=8 train_v2.py configs/distil_glint360k_facelivt_s_li.py
 ```
 
-#### FaceLiVT-S
+#### FaceLiVT-M
 
 Launch the following command after setting the root path and output path in the config files:
 
 ```bash
 torchrun --nproc_per_node=4 train_v2.py configs/distil_glint360k_facelivt_m_li.py
 ```
-After finishing this step, launch:
-
-```bash
-torchrun --nproc_per_node=4 train_v2_restart.py configs/distil_glint360k_facelivt_m_li.py
-```
-
-
-
 
 > :warning: **Note About the License:** Please refer to the `LICENSE` file in the parent directory for information about the license terms and conditions.
