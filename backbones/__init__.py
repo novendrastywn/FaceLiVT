@@ -11,15 +11,8 @@ located in the parent directory of this source code repository.
 For inquiries, please contact the author at anjith.george@idiap.ch
 ===============================================================================
 """
-from .timmfr import get_timmfrv2, replace_linear_with_lowrank_2
-from .pocketnet.augment_cnn import AugmentCNN 
-from .pocketnet import genotypes as gt
-from .vargfacenet import VarGFaceNet
-from .iresnet import iresnet18, iresnet34, iresnet50, iresnet100, iresnet200
 from .facelivt import *
-# from .facelivtv2 import *
-from .mobilefacenet import MobileFaceNet
-from .kanface.KANFace import KANFace
+from .facelivtv2 import *
 import timm
 import torch
 
