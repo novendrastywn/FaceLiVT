@@ -14,7 +14,7 @@ Official gitlab repository for FaceLiVT Series: Face Recognition using Linear Vi
 published in IEEE International Conference on Image Processing.
 
 
-> Abstract: his paper introduces FaceLiVT, a lightweight yet powerful face recognition model that integrates a hybrid Convolution Neural Network (CNN)-Transformer architecture with an innovative and lightweight Multi-Head Linear Attention (MHLA) mechanism. By combining MHLA alongside a reparameterized token mixer, FaceLiVT effectively reduces computational complexity while preserving competitive accuracy. Extensive evaluations on challenging benchmarks; including LFW, CFP-FP, AgeDB-30, IJB-B, and IJB-C; highlight its superior performance compared to state-of-the-art lightweight models. MHLA notably improves inference speed, allowing FaceLiVT to deliver high accuracy with lower latency on mobile devices. Specifically, FaceLiVT is 8.6 faster than EdgeFace, a recent hybrid CNN-Transformer model optimized for edge devices, and 21.2 faster than a pure ViT-Based model. With its balanced design, FaceLiVT offers an efficient and practical solution for real-time face recognition on resource-constrained platforms.
+> Abstract: his paper introduces FaceLiVT, a lightweight yet powerful face recognition model that integrates a hybrid Convolution Neural Network (CNN)-Transformer architecture with an innovative and lightweight Multi-Head Linear Attention (MHLA) mechanism. By combining MHLA alongside a reparameterized token mixer, FaceLiVT effectively reduces computational complexity while preserving competitive accuracy. Extensive evaluations on challenging benchmarks; including LFW, CFP-FP, AgeDB-30, IJB-B, and IJB-C; highlight its superior performance compared to state-of-the-art lightweight models. MHLA notably improves inference speed, allowing FaceLiVT to deliver high accuracy with lower latency on mobile devices. Specifically, FaceLiVT is 8.6 faster than , a recent hybrid CNN-Transformer model optimized for edge devices, and 21.2 faster than a pure ViT-Based model. With its balanced design, FaceLiVT offers an efficient and practical solution for real-time face recognition on resource-constrained platforms.
 ```angular2html
 @article{setyawan2025facelivt,
   title={FaceLiVT: Face Recognition using Linear Vision Transformer with Structural Reparameterization For Mobile Device},
@@ -101,12 +101,12 @@ Download and prepare WebFace4M and WebFace12M: place the `.rec` files in `data/w
 Launch the following command after setting the root path and output path in the config files:
 
 ```bash
-torchrun --nproc_per_node=8 train_v2.py configs/edgeface_s_gamma_05.py
+torchrun --nproc_per_node=8 train_v2.py configs/distil_glint360k_facelivt_m_li.py
 ```
 After finishing this step, launch:
 
 ```bash
-torchrun --nproc_per_node=8 train_v2_restart.py configs/edgeface_s_gamma_05_restart.py
+torchrun --nproc_per_node=8 train_v2_restart.py configs/distil_glint360k_facelivt_m_li.py
 ```
 
 #### FaceLiVT-S
@@ -123,22 +123,6 @@ torchrun --nproc_per_node=4 train_v2_restart.py configs/distil_glint360k_faceliv
 ```
 
 
-# EdgeFace Models via `torch.hub`
-
-## Available Models
-
-- `facelivt_s`
-
-
-## Usage
-
-You can load the models using `torch.hub` as follows:
-
-```python
-import torch
-variant='edgeface_xs_gamma_06'
-model = torch.hub.load('otroshi/edgeface', variant, source='github', pretrained=True)
-model.eval()
 
 
 > :warning: **Note About the License:** Please refer to the `LICENSE` file in the parent directory for information about the license terms and conditions.
