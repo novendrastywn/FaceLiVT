@@ -16,12 +16,16 @@ published in IEEE International Conference on Image Processing.
 
 > Abstract: his paper introduces FaceLiVT, a lightweight yet powerful face recognition model that integrates a hybrid Convolution Neural Network (CNN)-Transformer architecture with an innovative and lightweight Multi-Head Linear Attention (MHLA) mechanism. By combining MHLA alongside a reparameterized token mixer, FaceLiVT effectively reduces computational complexity while preserving competitive accuracy. Extensive evaluations on challenging benchmarks; including LFW, CFP-FP, AgeDB-30, IJB-B, and IJB-C; highlight its superior performance compared to state-of-the-art lightweight models. MHLA notably improves inference speed, allowing FaceLiVT to deliver high accuracy with lower latency on mobile devices. Specifically, FaceLiVT is 8.6 faster than , a recent hybrid CNN-Transformer model optimized for edge devices, and 21.2 faster than a pure ViT-Based model. With its balanced design, FaceLiVT offers an efficient and practical solution for real-time face recognition on resource-constrained platforms.
 ```angular2html
-@article{setyawan2025facelivt,
-  title={FaceLiVT: Face Recognition using Linear Vision Transformer with Structural Reparameterization For Mobile Device},
+@INPROCEEDINGS{setyawan2025facelivt,
   author={Setyawan, Novendra and Sun, Chi-Chia and Hsu, Mao-Hsiu and Kuo, Wen-Kai and Hsieh, Jun-Wei},
-  journal={arXiv preprint arXiv:2506.10361},
-  year={2025}
-}
+  booktitle={2025 IEEE International Conference on Image Processing (ICIP)}, 
+  title={FaceLiVT: Face Recognition Using Linear Vision Transformer with Structural Reparameterization for Mobile Device}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1720-1725},
+  keywords={Performance evaluation;Computer vision;Accuracy;Face recognition;Computational modeling;Computer architecture;Benchmark testing;Transformers;Mobile;    Real-time systems;Face Recognition;Vision Transformer;Multi-Head Linear Attention (MHLA);Structural Reparameterization;Lightweight Model},
+  doi={10.1109/ICIP55913.2025.11084611}}
 ```
 
 ## Installation Instructions
