@@ -44,7 +44,7 @@ pip install pandas tabulate mxnet
 ```
 
 
-<img src="assets/edgeface.png"/>
+<img src="assets/FLiVTv1.png"/>
 
 The following code shows how to use the model for inference:
 ```python
