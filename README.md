@@ -268,7 +268,7 @@ python train_tinyface.py configs/tinyface_facelivtv2_s.py --pretrained checkpoin
 
 Comparison of FaceLiVTv2 variants with SOTA on FR benchmark dataset. FLOPs and mobile latency are measured in 112 × 112 input size on iPhone 15 Pro.
 
-#### Large Models (> 300M FLOPs)
+#### Large Models (> 600M FLOPs)
 
 | Model | Year | Param (M) | FLOPs (M) | Training Dataset | LFW | CA-LFW | CP-LFW | CFP-FP | AgeDB30 | IJB-B | IJB-C | Mean Acc(%) | Mobile Latency (ms) |
 |:---|:---:|:---:|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -280,7 +280,7 @@ Comparison of FaceLiVTv2 variants with SOTA on FR benchmark dataset. FLOPs and m
 | PocketNetM128 [38] | '22 | 1.68 | 1099 | CASIA-WF | 99.65 | 95.67 | 90.00 | 95.07 | 96.78 | 90.63 | 92.63 | 94.35 | 0.98 |
 | MixFaceNets-M [8] | '21 | 3.9 | 626 | MS1MV2 | 99.68 | - | - | - | 97.05 | 91.55 | 93.42 | - | 0.70 |
 
-#### Medium Models (200–400M FLOPs)
+#### Medium Models (300–600M FLOPs)
 
 | Model | Year | Param (M) | FLOPs (M) | Training Dataset | LFW | CA-LFW | CP-LFW | CFP-FP | AgeDB30 | IJB-B | IJB-C | Mean Acc(%) | Mobile Latency (ms) |
 |:---|:---:|:---:|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -293,7 +293,7 @@ Comparison of FaceLiVTv2 variants with SOTA on FR benchmark dataset. FLOPs and m
 | PocketNetS128 [38] | '22 | 0.92 | 587 | CASIA-WF | 99.58 | 95.48 | 88.63 | 94.21 | 96.10 | 89.44 | 91.62 | 93.58 | 0.88 |
 | PocketNetS256 [38] | '22 | 0.99 | 587 | CASIA-WF | 99.66 | 95.50 | 88.93 | 93.34 | 96.36 | 89.31 | 91.33 | 93.49 | 0.88 |
 
-#### Small Models (60–300M FLOPs)
+#### Small Models (100–300M FLOPs)
 
 | Model | Year | Param (M) | FLOPs (M) | Training Dataset | LFW | CA-LFW | CP-LFW | CFP-FP | AgeDB30 | IJB-B | IJB-C | Mean Acc(%) | Mobile Latency (ms) |
 |:---|:---:|:---:|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -302,7 +302,7 @@ Comparison of FaceLiVTv2 variants with SOTA on FR benchmark dataset. FLOPs and m
 | EdgeFace-XS [10] | '24 | 1.77 | 154 | WebFace12M | 99.73 | 95.28 | 91.82 | 94.37 | 96.00 | 92.67 | 94.85 | 94.96 | 5.82 |
 | FaceLiVTv1-S [20] | '25 | 5.89 | 237 | Glint360K | 99.70 | 95.63 | 90.70 | 95.10 | 96.60 | 91.20 | 92.70 | 94.52 | 0.47 |
 
-#### Tiny Models (< 80M FLOPs)
+#### Tiny Models (< 100M FLOPs)
 
 | Model | Year | Param (M) | FLOPs (M) | Training Dataset | LFW | CA-LFW | CP-LFW | CFP-FP | AgeDB30 | IJB-B | IJB-C | Mean Acc(%) | Mobile Latency (ms) |
 |:---|:---:|:---:|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -325,14 +325,14 @@ Comparison of FaceLiVTv2 variants with SOTA on FR benchmark dataset. FLOPs and m
 
 <!-- TODO: Add download links for pretrained models -->
 
-| Model | Training Data | Loss | Checkpoint |
-|:---|:---|:---|:---|
-| `facelivt_s` | Glint360K | CosFace | [Download](#) |
-| `facelivt_m` | Glint360K | CosFace | [Download](#) |
-| `facelivtv2_xs` | Glint360K | CosFace / ArcFace | [Download](#) |
-| `facelivtv2_s` | Glint360K | CosFace / ArcFace | [Download](#) |
-| `facelivtv2_m` | Glint360K | CosFace / ArcFace | [Download](#) |
-| `facelivtv2_l` | Glint360K | CosFace / ArcFace | [Download](#) |
+| Model | Training Data | Checkpoint |
+|:---|:---|:---|
+| `facelivt_s` | Glint360K | [Download](#) |
+| `facelivt_m` | Glint360K | [Download](#) |
+| `facelivtv2_xs` | Glint360K | [Download](#) |
+| `facelivtv2_s` | Glint360K | [Download](#) |
+| `facelivtv2_m` | Glint360K | [Download](#) |
+| `facelivtv2_l` | Glint360K | [Download](#) |
 
 ---
 
