@@ -9,7 +9,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/edgeface-efficient-face-recognition-model-for/lightweight-face-recognition-on-ijb-c)](https://paperswithcode.com/sota/lightweight-face-recognition-on-ijb-c?p=edgeface-efficient-face-recognition-model-for)	
 
 [![arXiv](https://img.shields.io/badge/cs.CV-arXiv%3A2307.01838-009d81v2.svg)](https://arxiv.org/abs/2506.10361)
-[![apccas](https://upload.wikimedia.org/wikipedia/commons/5/56/Ieee_blue.jpg)](https://ieeexplore.ieee.org/abstract/document/11376969)
+[![apccas](https://img.shields.io/badge/cs.APCCAS-IEEE%11376969.svg)](https://ieeexplore.ieee.org/abstract/document/11376969)
 
 Official gitlab repository for FaceLiVT Series: Face Recognition using Linear Vision Transformer.
 
