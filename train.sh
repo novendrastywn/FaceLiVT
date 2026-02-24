@@ -7,6 +7,6 @@ PORT=${PORT:-29500}
 MASTER_ADDR=${MASTER_ADDR:-"127.0.0.1"}
 NUM_GPU=1
 
-torchrun --master_addr=$MASTER_ADDR --nproc_per_node=$NUM_GPU --master_port=$PORT train_v2_aux_distil.py \
+torchrun --master_addr=$MASTER_ADDR --nproc_per_node=$NUM_GPU --master_port=$PORT train_v2.py \
 configs/glint360k_facelivtv2_l.py #ms1mv3_facelivtv2_s.py #glint360k_facelivtv2_s.py
 
