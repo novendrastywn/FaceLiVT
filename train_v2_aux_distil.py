@@ -11,7 +11,7 @@ from backbones import get_model
 from dataset import get_dataloader
 from losses import CombinedMarginLoss, ArcFace, CosFace
 from lr_scheduler import PolynomialLRWarmup, CosineLRWarmup
-from partial_fc_v2_aux_distil import PartialFC_V2
+from partial_fc_v2 import PartialFC_V2
 from torch import distributed
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
