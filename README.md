@@ -9,6 +9,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/edgeface-efficient-face-recognition-model-for/lightweight-face-recognition-on-ijb-c)](https://paperswithcode.com/sota/lightweight-face-recognition-on-ijb-c?p=edgeface-efficient-face-recognition-model-for)	
 
 [![arXiv](https://img.shields.io/badge/cs.CV-arXiv%3A2307.01838-009d81v2.svg)](https://arxiv.org/abs/2506.10361)
+[![apccas](https://upload.wikimedia.org/wikipedia/commons/5/56/Ieee_blue.jpg)](https://ieeexplore.ieee.org/abstract/document/11376969)
 
 Official gitlab repository for FaceLiVT Series: Face Recognition using Linear Vision Transformer.
 
@@ -20,7 +21,7 @@ The FaceLiVT series introduces hybrid CNN–Transformer architectures with light
 
 | Version | Venue | Key Contribution |
 |:---|:---|:---|
-| **FaceLiVTv1** | IEEE ICIP 2025 / IEEE APCCAS 2025 | Multi-Head Linear Attention (MHLA) with structural reparameterization |
+| **FaceLiVTv1** | IEEE ICIP 2025 & IEEE APCCAS 2025 | Multi-Head Linear Attention (MHLA) with structural reparameterization |
 | **FaceLiVTv2** | IEEE TBIOM (Under Review) | Lite MHLA with affine rescale transformation, GDConv head, unified RepMix–Lite MHLA block |
 
 ---
@@ -97,7 +98,6 @@ The FaceLiVT series introduces hybrid CNN–Transformer architectures with light
 | `facelivtv2_s` | 48 / 96 / 192 / 384 | 179 | 4.62 |
 | `facelivtv2_m` | 56 / 112 / 224 / 448 | 258 | 7.04 |
 | `facelivtv2_l` | 64 / 128 / 256 / 512 | 309 | 8.52 |
-
 
 
 ## Installation Instructions
@@ -270,16 +270,61 @@ python train_tinyface.py configs/tinyface_facelivtv2_s.py --pretrained checkpoin
 | IJB-C | Mixed Verification/Identification | 3,531 subjects |
 | TinyFace | Low-Resolution Retrieval | Rank-1/5/10 (FaceLiVTv2) |
 
-### Cross-Platform Inference (FaceLiVTv2)
 
-FaceLiVTv2 was evaluated across multiple platforms:
+### Results
 
-| Platform | Device | Runtime |
-|:---|:---|:---|
-| Mobile | iPhone 15 Pro | CoreML |
-| Edge | Jetson AGX Orin | ONNX Runtime |
-| CPU | Intel i5-12500 (64GB) | ONNX Runtime |
-| GPU | NVIDIA RTX 5090 | ONNX Runtime |
+Comparison of FaceLiVTv2 variants with SOTA on FR benchmark dataset. FLOPs and mobile latency are measured in 112 × 112 input size on iPhone 15 Pro.
+
+#### Large Models (> 300M FLOPs)
+
+| Model | Year | Param (M) | FLOPs (M) | Training Dataset | LFW | CA-LFW | CP-LFW | CFP-FP | AgeDB30 | IJB-B | IJB-C | Mean Acc(%) | Mobile Latency (ms) |
+|:---|:---:|:---:|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| TransFace-S [15] | '23 | 86.7 | 5.8G | Glint360K | 99.85 | - | - | 98.91 | 98.50 | - | 97.33 | - | 14.31 |
+| ResNet50-ArcFace [3] | '22 | 43.6 | 6.3G | Glint360K | 99.78 | - | - | 98.77 | 98.28 | - | 95.65 | - | 3.76 |
+| VarGFaceNet [7] | '19 | 5.0 | 1022 | MS1MV3 | 99.85 | 95.15 | 88.55 | 98.50 | 98.15 | 92.90 | 94.70 | 95.40 | 0.83 |
+| SwiftFaceFormer-L1 [11] | '24 | 11.8 | 805 | MS1MV3 | 99.68 | 95.80 | 90.10 | 96.61 | 96.95 | 91.81 | 93.82 | 95.25 | 1.20 |
+| PocketNetM256 [38] | '22 | 1.75 | 1099 | CASIA-WF | 99.58 | 95.63 | 90.03 | 95.66 | 97.17 | 90.74 | 92.70 | 94.50 | 0.98 |
+| PocketNetM128 [38] | '22 | 1.68 | 1099 | CASIA-WF | 99.65 | 95.67 | 90.00 | 95.07 | 96.78 | 90.63 | 92.63 | 94.35 | 0.98 |
+| MixFaceNets-M [8] | '21 | 3.9 | 626 | MS1MV2 | 99.68 | - | - | - | 97.05 | 91.55 | 93.42 | - | 0.70 |
+
+#### Medium Models (200–400M FLOPs)
+
+| Model | Year | Param (M) | FLOPs (M) | Training Dataset | LFW | CA-LFW | CP-LFW | CFP-FP | AgeDB30 | IJB-B | IJB-C | Mean Acc(%) | Mobile Latency (ms) |
+|:---|:---:|:---:|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| KANFace-0.5 [12] | '25 | 6.80 | 397 | WebFace12M | 99.82 | 95.48 | 92.65 | 98.31 | 96.90 | 93.69 | 95.64 | 96.07 | 9.98 |
+| FaceLiVTv1-M [20] | '25 | 9.8 | 386 | Glint360K | 99.70 | 95.76 | 90.97 | 97.20 | 97.60 | 93.70 | 95.70 | 95.80 | 0.67 |
+| EdgeFace-S [10] | '24 | 3.6 | 306 | WebFace12M | 99.78 | 95.71 | 92.56 | 95.81 | 96.93 | 93.59 | 95.63 | 95.72 | 9.89 |
+| MobileFaceNet [6] | '21 | 0.99 | 440 | MS1MV2 | 99.70 | 95.20 | 89.22 | 96.90 | 97.60 | 92.83 | 94.70 | 95.16 | 0.77 |
+| ShuffleFaceNet-1.5 [6], [32] | '21 | 2.6 | 577 | MS1MV2 | 99.67 | 95.05 | 88.50 | 97.26 | 97.32 | 92.30 | 94.30 | 94.91 | 0.69 |
+| SwiftFaceFormer-S [11] | '24 | 6.0 | 485 | MS1MV3 | 99.60 | 95.78 | 90.00 | 96.49 | 96.83 | 91.56 | 93.54 | 94.83 | 0.65 |
+| PocketNetS128 [38] | '22 | 0.92 | 587 | CASIA-WF | 99.58 | 95.48 | 88.63 | 94.21 | 96.10 | 89.44 | 91.62 | 93.58 | 0.88 |
+| PocketNetS256 [38] | '22 | 0.99 | 587 | CASIA-WF | 99.66 | 95.50 | 88.93 | 93.34 | 96.36 | 89.31 | 91.33 | 93.49 | 0.88 |
+
+#### Small Models (60–300M FLOPs)
+
+| Model | Year | Param (M) | FLOPs (M) | Training Dataset | LFW | CA-LFW | CP-LFW | CFP-FP | AgeDB30 | IJB-B | IJB-C | Mean Acc(%) | Mobile Latency (ms) |
+|:---|:---:|:---:|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| GhostFaceNetV1-1 [9] | '23 | 4.1 | 216 | MS1MV3 | 99.73 | 95.93 | 91.93 | 96.83 | 98.00 | 93.12 | 94.94 | 95.78 | 0.78 |
+| KANFace-0.6 [12] | '25 | 4.74 | 240 | WebFace12M | 99.65 | 95.32 | 91.47 | 97.17 | 95.52 | 92.95 | 94.75 | 95.26 | 6.52 |
+| EdgeFace-XS [10] | '24 | 1.77 | 154 | WebFace12M | 99.73 | 95.28 | 91.82 | 94.37 | 96.00 | 92.67 | 94.85 | 94.96 | 5.82 |
+| FaceLiVTv1-S [20] | '25 | 5.89 | 237 | Glint360K | 99.70 | 95.63 | 90.70 | 95.10 | 96.60 | 91.20 | 92.70 | 94.52 | 0.47 |
+
+#### Tiny Models (< 80M FLOPs)
+
+| Model | Year | Param (M) | FLOPs (M) | Training Dataset | LFW | CA-LFW | CP-LFW | CFP-FP | AgeDB30 | IJB-B | IJB-C | Mean Acc(%) | Mobile Latency (ms) |
+|:---|:---:|:---:|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| GhostFaceNetV2-2 [9] | '23 | 6.8 | 77 | MS1MV3 | 99.68 | 95.73 | 90.17 | 94.29 | 96.83 | 91.89 | 93.16 | 94.54 | 0.67 |
+| GhostFaceNetV1-2 [9] | '23 | 4.1 | 60 | MS1MV3 | 99.68 | 95.60 | 90.07 | 93.31 | 96.92 | 91.25 | 93.45 | 94.33 | 0.60 |
+| ShuffleFaceNet-0.5 [6], [32] | '21 | 1.4 | 67 | MS1MV2 | 99.20 | - | - | 92.60 | 93.20 | - | - | - | 0.45 |
+
+#### FaceLiVTv2 (Ours)
+
+| Model | Param (M) | FLOPs (M) | Training Dataset | LFW | CA-LFW | CP-LFW | CFP-FP | AgeDB30 | IJB-B | IJB-C | Mean Acc(%) | Mobile Latency (ms) |
+|:---|:---:|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **FaceLiVTv2-L** | 8.52 | 309 | Glint360K | 99.80 | 96.00 | 93.07 | 98.26 | 98.02 | 95.18 | 96.59 | **96.70(+0.63)** | **0.71(14.0×↓)** |
+| **FaceLiVTv2-M** | 7.02 | 258 | Glint360K | 99.78 | 96.12 | 92.92 | 97.93 | 98.10 | 95.02 | 96.42 | **96.61(+0.83)** | **0.65(16.7%↓)** |
+| **FaceLiVTv2-S** | 4.62 | 179 | Glint360K | 99.78 | 95.93 | 92.45 | 97.47 | 97.82 | 94.51 | 95.99 | **96.28(+0.50)** | **0.54(30.8%↓)** |
+| **FaceLiVTv2-XS** | 2.9 | 90 | Glint360K | 99.63 | 95.58 | 90.38 | 95.23 | 96.68 | 90.67 | 91.25 | 94.20(-0.24) | **0.43(35.8%↓)** |
 
 ---
 
