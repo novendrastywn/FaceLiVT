@@ -4,7 +4,7 @@
 [![icip-2025](https://img.shields.io/badge/ICIP2025-11084611-blue.svg)](https://ieeexplore.ieee.org/abstract/document/11084611)
 [![apccas-2025](https://img.shields.io/badge/APCCAS2025-11376969-blue.svg)](https://ieeexplore.ieee.org/abstract/document/11376969)
 
-Official gitlab repository for FaceLiVT Series: Face Recognition using Linear Vision Transformer.
+Official repository for FaceLiVT Series: Face Recognition using Linear Vision Transformer.
 
 ---
 
