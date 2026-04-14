@@ -6,7 +6,6 @@ from easydict import EasyDict as edict
 
 config = edict()
 config.margin_list = (1.0, 0.0, 0.35) # cosloss (1.0, 0.0, 0.4) archloss (1.0, 0.5, 0.0)
-config.aux_margin_list = "None"
 config.network = "facelivtv2_l"
 config.resume = True
 config.output = 'work_dirs/facelivtv2/facelivtv2_l_ms1mv3' #baseline
