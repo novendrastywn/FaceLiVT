@@ -329,10 +329,10 @@ Comparison of FaceLiVTv2 variants with SOTA on FR benchmark dataset. FLOPs and m
 |:---|:---|:---|
 | `facelivt_s` | Glint360K | [Download](#) |
 | `facelivt_m` | Glint360K | [Download](#) |
-| `facelivtv2_xs` | Glint360K | [Download](#) |
-| `facelivtv2_s` | Glint360K | [Download](#) |
-| `facelivtv2_m` | Glint360K | [Download](#) |
-| `facelivtv2_l` | Glint360K | [Download](#) |
+| `facelivtv2_xs` | Glint360K | [Download](https://huggingface.co/novendrastywn/FaceLiVT/resolve/main/facelivtv2-xs.pt) |
+| `facelivtv2_s` | Glint360K | [Download](https://huggingface.co/novendrastywn/FaceLiVT/resolve/main/facelivtv2-s.pt) |
+| `facelivtv2_m` | Glint360K | [Download](https://huggingface.co/novendrastywn/FaceLiVT/resolve/main/facelivtv2-m.pt) |
+| `facelivtv2_l` | Glint360K | [Download](https://huggingface.co/novendrastywn/FaceLiVT/resolve/main/facelivtv2-l.pt) |
 
 ---
 
