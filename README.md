@@ -52,17 +52,8 @@ The FaceLiVT series introduces hybrid CNN–Transformer architectures with light
 }
 ```
 
-### FaceLiVTv1 Model Variants
-
-| Model | MAdds | Params |
-|:---|:---:|:---:|
-| `facelivt_s` | 160 | 5.05 M |
-| `facelivt_m` | 386 | 9.75 M |
-
----
-
 ## FaceLiVTv2
-
+[![arXiv](https://img.shields.io/badge/cs.CV-arXiv%3A2604.09127-009d81v2.svg)](https://arxiv.org/pdf/2604.09127)
 > **FaceLiVTv2: An Improved Baseline Hybrid Architecture for Efficient Mobile Face Recognition**
 >
 > Submitted to *IEEE Transactions on Biometrics, Behavior, and Identity Science (TBIOM)*.
