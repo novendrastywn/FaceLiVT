@@ -1,15 +1,12 @@
 # FaceLiVT Series: Face Recognition using Linear Vision Transformer
 
-[![arXiv](https://img.shields.io/badge/cs.CV-arXiv%3A2307.01838-009d81v2.svg)](https://arxiv.org/abs/2506.10361)
-[![icip-2025](https://img.shields.io/badge/ICIP2025-11084611-blue.svg)](https://ieeexplore.ieee.org/abstract/document/11084611)
-[![apccas-2025](https://img.shields.io/badge/APCCAS2025-11376969-blue.svg)](https://ieeexplore.ieee.org/abstract/document/11376969)
-
 Official repository for FaceLiVT Series: Face Recognition using Linear Vision Transformer.
 
 ---
 
 ## Overview
 
+<img src="assets/FaceLiVTv2_Arch.png"/>
 The FaceLiVT series introduces hybrid CNN–Transformer architectures with lightweight linear attention mechanisms for efficient mobile face recognition. The series currently includes two generations:
 
 | Version | Venue | Key Contribution |
@@ -17,9 +14,14 @@ The FaceLiVT series introduces hybrid CNN–Transformer architectures with light
 | **FaceLiVTv1** | IEEE ICIP 2025 & IEEE APCCAS 2025 | Multi-Head Linear Attention (MHLA) with structural reparameterization |
 | **FaceLiVTv2** | IEEE TBIOM (Under Review) | Lite MHLA with affine rescale transformation, GDConv head, unified RepMix–Lite MHLA block |
 
+
 ---
 
 ## FaceLiVTv1
+
+[![arXiv](https://img.shields.io/badge/cs.CV-arXiv%3A2307.01838-009d81v2.svg)](https://arxiv.org/abs/2506.10361)
+[![icip-2025](https://img.shields.io/badge/ICIP2025-11084611-blue.svg)](https://ieeexplore.ieee.org/abstract/document/11084611)
+[![apccas-2025](https://img.shields.io/badge/APCCAS2025-11376969-blue.svg)](https://ieeexplore.ieee.org/abstract/document/11376969)
 
 > **FaceLiVT: Face Recognition Using Linear Vision Transformer with Structural Reparameterization for Mobile Device**
 > 
@@ -27,7 +29,7 @@ The FaceLiVT series introduces hybrid CNN–Transformer architectures with light
 
 **Abstract**: This paper introduces FaceLiVT, a lightweight yet powerful face recognition model that integrates a hybrid Convolution Neural Network (CNN)-Transformer architecture with an innovative and lightweight Multi-Head Linear Attention (MHLA) mechanism. By combining MHLA alongside a reparameterized token mixer, FaceLiVT effectively reduces computational complexity while preserving competitive accuracy. Extensive evaluations on challenging benchmarks; including LFW, CFP-FP, AgeDB-30, IJB-B, and IJB-C; highlight its superior performance compared to state-of-the-art lightweight models. MHLA notably improves inference speed, allowing FaceLiVT to deliver high accuracy with lower latency on mobile devices. Specifically, FaceLiVT is 8.6× faster than EdgeFace, a recent hybrid CNN-Transformer model optimized for edge devices, and 21.2× faster than a pure ViT-Based model. With its balanced design, FaceLiVT offers an efficient and practical solution for real-time face recognition on resource-constrained platforms.
 
-<img src="assets/FLiVTv1.png"/>
+
 
 ```bibtex
 @INPROCEEDINGS{setyawan2025facelivt,
@@ -73,15 +75,6 @@ The FaceLiVT series introduces hybrid CNN–Transformer architectures with light
 | **Stage Strategy** | Same mixing across all stages | Stage-specific: RepMix+FFN (stages 1-2), RepMix+LiteMHLA+FFN (stages 3-4) |
 | **Embedding Head** | Global Average Pooling (GAP) | Global Depthwise Convolution (GDConv) for adaptive spatial aggregation |
 | **Complexity** | `2(NrN)C` per MHLA block | `≈ N²C + ε` per Lite MHLA block |
-
-### FaceLiVTv2 Model Variants
-
-| Model | Channels (S1/S2/S3/S4) | MAdds (M) | Params (M) |
-|:---|:---:|:---:|:---:|
-| `facelivtv2_xs` | 32 / 64 / 128 / 256 | 90 | 2.9 |
-| `facelivtv2_s` | 48 / 96 / 192 / 384 | 179 | 4.62 |
-| `facelivtv2_m` | 56 / 112 / 224 / 448 | 258 | 7.04 |
-| `facelivtv2_l` | 64 / 128 / 256 / 512 | 309 | 8.52 |
 
 
 ## Installation Instructions
@@ -329,7 +322,7 @@ Comparison of FaceLiVTv2 variants with SOTA on FR benchmark dataset. FLOPs and m
 
 ## Acknowledgements
 
-This work was conducted in collaboration between the Department of Electro-Optics at National Formosa University, the Department of Electrical Engineering at National Taipei University, and the College of Artificial Intelligence and Green Energy at National Yang Ming Chiao Tung University.
+This work was conducted in collaboration between the Department of Electro-Optics at National Formosa University, the Department of Electrical Engineering at National Taipei University, the Department of Electrical Engineering at University of Muhammadiyah Malang, and the College of Artificial Intelligence and Green Energy at National Yang Ming Chiao Tung University.
 
 ---
 
