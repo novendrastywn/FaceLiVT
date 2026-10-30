@@ -320,6 +320,19 @@ Comparison of FaceLiVTv2 variants with SOTA on FR benchmark dataset. FLOPs and m
 
 ---
 
+```bibtex
+@ARTICLE{setyawan2026facelivtv2,
+  author={Setyawan, Novendra and Sun, Chi-Chia and Hsu, Mao-Hsiu and Kuo, Wen-Kai and Hsieh, Jun-Wei},
+  journal={IEEE Transactions on Biometrics, Behavior, and Identity Science}, 
+  title={FaceLiVTv2: An Improved Hybrid Architecture for Efficient Mobile Face Recognition}, 
+  year={2026},
+  volume={8},
+  number={5},
+  pages={905-918},
+  keywords={Face recognition;Transformers;Linear systems;Edge computing;Image recognition;Face recognition;mobile face recognition;lightweight transformer;linear attention},
+  doi={10.1109/TBIOM.2026.3690540}}
+```
+
 ## Acknowledgements
 
 This work was conducted in collaboration between the Department of Electro-Optics at National Formosa University, the Department of Electrical Engineering at National Taipei University, the Department of Electrical Engineering at University of Muhammadiyah Malang, and the College of Artificial Intelligence and Green Energy at National Yang Ming Chiao Tung University.
